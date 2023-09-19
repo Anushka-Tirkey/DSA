@@ -1,0 +1,35 @@
+/*This is a program to demonstrate an abstract data type using Java*/
+
+import java.io.*;
+import java.util.Random;
+import java.math.*;
+
+public class DSA_2023_09_19_Q2 
+{
+    public static void main(String arg[])throws IOException
+    {
+        BufferedReader br = new BufferedReader ( new InputStreamReader(System.in));
+        int arr[]={1,5,3,8,2,9,0,6,10,45,28};
+        double l=arr.length;   //8
+        System.out.println("DISTANCE");
+        for(int i=0; i<arr.length; i++)
+        {
+            System.out.print(arr[i]+"\t");
+        }
+        Random rand=new Random();
+        int ind1=rand.nextInt(8), dist1=arr[ind1], ind2=rand.nextInt(8), dist2=arr[ind2];
+        int dist=Math.abs(ind1-ind2);
+        System.out.println();
+
+        if (dist<(l/5))
+            System.out.println(dist1+" km is very near to "+dist2+" km");
+        else if(dist>=(l/5) && dist<2*(l/5))
+            System.out.println(dist1+" km is near to "+dist2+" km");
+        else if(dist>=2*(l/5) && dist<3*(l/5))
+            System.out.println(dist1+" km is at a medium distance from "+dist2+" km");
+        else if(dist>=3*(l/5) && dist<4*(l/5))
+            System.out.println(dist1+" km is far from "+dist2+" km");
+        else
+            System.out.println(dist1+" km is very far from "+dist2+" km");
+    }   
+}
